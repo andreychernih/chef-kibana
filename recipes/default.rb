@@ -87,6 +87,17 @@ link "#{node['kibana']['web_dir']}/app/dashboards/default.json" do
   only_if { !File::symlink?("#{node['kibana']['web_dir']}/app/dashboards/default.json") }
 end
 
+if node['kibana']['auth']['users'].any?
+  include_recipe 'htpasswd'
+
+  node['kibana']['auth']['users'].each do |user|
+    htpasswd node['kibana']['auth']['htpasswd_file'] do
+      user user['name']
+      password user['password']
+    end
+  end
+end
+
 unless node['kibana']['webserver'].empty?
   include_recipe "kibana::#{node['kibana']['webserver']}"
 end

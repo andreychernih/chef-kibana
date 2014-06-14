@@ -30,3 +30,7 @@ default['kibana']['config']['default_route'] = '/dashboard/file/logstash.json'
 # include quote inside this next variable if not using window.location style variables...
 # e.g.  = "'http://elasticsearch.example.com:9200'"
 default['kibana']['config']['elasticsearch'] = "window.location.protocol+\"//\"+window.location.hostname+\":\"+window.location.port"
+
+default['htpasswd']['install_method'] = 'ruby'
+default['kibana']['auth']['htpasswd_file'] = File.join(default['kibana']['install_dir'], 'passwords')
+default['kibana']['auth']['users'] = (Chef::EncryptedDataBagItem.load('kibana', 'users')[node.chef_environment] || []) rescue []
