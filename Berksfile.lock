@@ -29,6 +29,9 @@
       "git": "git://github.com/elasticsearch/cookbook-elasticsearch.git",
       "ref": "42db58c0e672fbac407245e935406b3d0f3082d6"
     },
+    "htpasswd": {
+      "locked_version": "0.1.2"
+    },
     "bluepill": {
       "locked_version": "2.3.1"
     },
@@ -42,10 +45,10 @@
       "locked_version": "1.1.12"
     },
     "runit": {
-      "locked_version": "1.5.8"
+      "locked_version": "1.5.10"
     },
     "yum-epel": {
-      "locked_version": "0.3.4"
+      "locked_version": "0.3.6"
     },
     "dmg": {
       "locked_version": "2.2.0"
@@ -54,16 +57,22 @@
       "locked_version": "1.30.0"
     },
     "chef_handler": {
-      "locked_version": "1.1.5"
+      "locked_version": "1.1.6"
     },
     "aws": {
-      "locked_version": "2.1.0"
+      "locked_version": "2.2.2"
     },
     "xml": {
       "locked_version": "1.2.2"
     },
     "monit": {
       "locked_version": "0.7.1"
+    },
+    "ruby": {
+      "locked_version": "0.9.2"
+    },
+    "python": {
+      "locked_version": "1.4.6"
     }
   }
 }
